@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Car</title>
+</head>
+<body>
+<h2>Table Car</h2>
+<br>
+<br>
+
+<!--<div>-->
+<!--    <th:block th:each="car : ${cars}">-->
+<!--        <h1 th:text="${car}"></h1>-->
+<!--    </th:block>-->
+<!--</div>-->
+
+<div>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Marka</th>
+            <th>Year</th>
+        </tr>
+        <tr th:each ="car : ${cars}">
+            <td th:utext="${car.getModel()}">...</td>
+            <td th:utext="${car.getMarka()}">...</td>
+            <td th:utext="${car.getYear()}">...</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+<!--По поводу HTML: не обязательно здесь ради него лезть в гугл, можете полностью скопировать код из файлика index,
+вставить в свой и поменять названия параметров (msg на car и messages на cars, например. только во второй строке
+вместо msg напишите car.toString(), который потребуется переопределить для car)-->
